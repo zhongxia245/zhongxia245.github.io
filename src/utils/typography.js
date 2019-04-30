@@ -1,8 +1,11 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
+import "prismjs/themes/prism.css"
 
 Wordpress2016.overrideThemeStyles = () => {
   return {
+    body: { background: "hsla(55, 63%, 93%, 0.1)" },
+    a: { color: "#f57f17" },
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
