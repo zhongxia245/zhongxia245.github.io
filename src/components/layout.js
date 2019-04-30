@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm } from "../utils/typography"
+import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
@@ -13,8 +13,10 @@ class Layout extends React.Component {
       header = (
         <h1
           style={{
+            ...scale(1.4),
             marginBottom: rhythm(1.5),
             marginTop: 0,
+            textAlign: "center",
           }}
         >
           <Link
@@ -33,6 +35,7 @@ class Layout extends React.Component {
       header = (
         <h3
           style={{
+            ...scale(0.9),
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
           }}

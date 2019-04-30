@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Hello World`,
+    title: `Zhongxia`,
     author: `zhongxia`,
     description: `Stay Hungry, Stay Foolish.`,
     siteUrl: `https://zhongxia245.github.io/`,
