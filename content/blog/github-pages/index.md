@@ -1,26 +1,20 @@
 ---
 title: 利用 Github Pages 部署 Blog 站点
 date: 2019-04-30 16:22:39
-description: ''
+description: ""
 ---
 
-部署 Blog 站点，正常情况下，你需要一个有独立外网 IP 的服务器，一个域名。 
+部署 Blog 站点，正常情况下，你需要一个有独立外网 IP 的服务器，一个域名。
 
 但是 `Github` 提供了一个 `Github Pages` 的功能，支持把你代码仓库的代码部署起来，提提供一个 二级域名（`username.github.io`）。
-
-
 
 **`Github Pages` 是什么？**
 
 用户编写的，托管再 github 上的静态网页。
 
-
-
 > 下面所有讲述都默认认为您已经有了一个 `github`帐号的前提下。
 >
 > 笔者笔记本是 Mac 系统。
-
-
 
 ## 一、创建仓库
 
@@ -28,9 +22,7 @@ description: ''
 
 > 这个名字格式是 Github Pages 的规则
 
-![](http://asset.izhongxia.com/ipic/2019-04-30-084205.png?imageView2/1/q/75)
-
-
+![创建项目](./img1.png)
 
 ## 二、提交静态网页到仓库中
 
@@ -57,19 +49,15 @@ echo "<h1>hello world</h1>" >> index.html
 #  上传代码到master分支
 git add .
 git commit -am 'init project'
-git push  origin master 
+git push  origin master
 
 ```
 
 好了，代码上传到 github 仓库了 （这里需要有一点 git 知识）。
 
-
-
 大概这样
 
-![项目截图](http://asset.izhongxia.com/ipic/2019-04-30-085756.png?imageView2/1/q/75)
-
-
+![项目截图](./img2.png)
 
 ## 三、查看 Github Pages 配置
 
@@ -77,13 +65,9 @@ git push  origin master
 
 > 访问的时候，换成自己的二级域名。
 
-
-
 在 Project —> Settings —> Github Pages 可以看到分配给你的二级域名 (`username.github.io`)。
 
-![](http://asset.izhongxia.com/ipic/2019-04-30-085842.png)
-
-
+![设置位置](./img3.png)
 
 打开 `Settings` 后，往下滑动一屏左右，可以看到 `Github Pages` 的信息。
 
@@ -91,25 +75,14 @@ git push  origin master
 - 页面主题选择
 - 自定义域名配置
 
-![](http://asset.izhongxia.com/ipic/2019-04-30-090259.png)
-
-
+![img](./img4.png)
 
 很简单，你现在已经部署好了，你的静态站点了。 可以往里面添加你想要展示的内容了。
 
-
-
 如果你是写 Blog，可以去了解一下 `Hexo` , `Gatsby` ， 都可以快速构建出你简单美观的 Blog 站点了。
-
-
 
 ## 四、Gitee.io 了解一下
 
 如果访问 `github` 速度很慢的话，在国内，你可以考虑使用 `gitee.io` 来进行部署静态站点。
 
-
-
 `gitee.io` 可以理解为国内版的 `github`，部署静态站点的方式和 `github` 一样。
-
-
-
