@@ -1,5 +1,5 @@
 ---
-title: 使用 Prerender 实现纯前端页面的 SEO
+title: Prerender入门实践
 date: 2019-07-20 06:02:06
 description: ""
 ---
