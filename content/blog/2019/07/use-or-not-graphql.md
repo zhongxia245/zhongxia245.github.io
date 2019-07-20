@@ -98,4 +98,4 @@ RESTFul 一个接口一个地址，因此控制权限已有有成熟的解决方
 1. [《5 个用/不用 GraphQL 的理由》](https://www.jianshu.com/p/12dff5905cf6)
 
 2. [《2019 GraphQL 学习指南》](https://juejin.im/post/5c3d54096fb9a049c04346db)
-3. [《The state of GraphQL by Reddit》](
+3. [《The state of GraphQL by Reddit》](https://blog.graphqleditor.com/the-state-of-graphql-by-reddit/)
