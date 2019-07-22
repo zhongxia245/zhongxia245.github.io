@@ -34,6 +34,8 @@ pm2 start server.js --name prerender
 curl https://intoli.com/install-google-chrome.sh | bash
 ```
 
+如果是要跑到 docker 上，请看文章末尾 [prerender run in docker](#docker)。
+
 ## 配置 Nginx 转发
 
 大概意思就是 nginx 判断 ua 是否携带爬虫的标识，是则转发的 prerender 服务。
@@ -82,4 +84,101 @@ curl  http://localhost/index.html
 
 # 在加上百度爬虫的 UA 访问
 curl -A Baiduspider http://localhost/index.html
+```
+
+## 补充一个 Prerender Run in Docker
+
+<span id="docker"></span>
+
+因为实现上面这个案例的时候，实用的是自己的阿里云服务器（centos6.5），因此直接采用 curl 的安装方式，然后把项目跑起来就可以了。
+
+但是在公司内使用的时候，需要使用 docker 进行部署，因此需要进行以下的一些修改。
+
+### 1、Docker 内安装 chrome 浏览器
+
+```bash
+# node-chrome-10.16
+FROM node:10.16-alpine
+
+ENV APP_PATH /app
+WORKDIR ${APP_PATH}
+
+# Change mirrors to tsinghua
+RUN echo http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/main > /etc/apk/repositories && \
+    echo http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/community >> /etc/apk/repositories && \
+    echo http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/testing >> /etc/apk/repositories && apk update
+
+# Setting timezone
+RUN apk add tzdata openssh-client git
+RUN cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime
+
+# Installs cnpm
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+# Installs latest Chromium (73) package.
+RUN apk add --no-cache \
+      curl \
+      make \
+      gcc \
+      g++ \
+      python \
+      linux-headers \
+      binutils-gold \
+      gnupg \
+      libstdc++ \
+      udev \
+      chromium=~73.0.3683.103 \
+      nss \
+      freetype \
+      freetype-dev \
+      harfbuzz \
+      ttf-freefont \
+      wqy-zenhei
+
+# Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+
+# Puppeteer v1.12.2 works with Chromium 73.
+RUN yarn add puppeteer@1.12.2
+
+RUN apk del --no-cache make gcc g++ python binutils-gold gnupg libstdc++
+
+# Add user so we don't need --no-sandbox.
+#RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
+#    && mkdir -p /home/pptruser/Downloads /app \
+#    && chown -R pptruser:pptruser /home/pptruser \
+#    && chown -R pptruser:pptruser /app
+#
+## Run everything after as non-privileged user.
+#USER pptruser
+
+CMD ['/bin/sh']
+```
+
+### 2、修改 prerender 的代码
+
+```javascript
+#!/usr/bin/env node
+var prerender = require("./lib")
+
+// 需要指定chromeLocation，否则会报 unable to find Chrome install. Please specify with chromeLocation
+// 需要加上 chromeFlags ，否则会报 Chrome connection closed... restarting Chrome
+// https://github.com/prerender/prerender/issues/450
+var server = prerender({
+  chromeLocation: "/usr/bin/chromium-browser",
+  chromeFlags: [
+    "--no-sandbox",
+    "--headless",
+    "--disable-gpu",
+    "--remote-debugging-port=9222",
+    "--hide-scrollbars",
+  ],
+})
+
+server.use(prerender.sendPrerenderHeader())
+// server.use(prerender.blockResources());
+server.use(prerender.removeScriptTags())
+server.use(prerender.httpHeaders())
+
+server.start()
 ```
