@@ -11,10 +11,26 @@ Wordpress2016.overrideThemeStyles = () => {
     },
     blockquote: {
       fontSize: "15px",
+      marginLeft: "0",
       borderColor: "hsla(0,0%,0%,0.05)",
+      background: "#e0f2f1",
+      color: " #00796b",
+      padding: "10px",
+    },
+    "@media only screen and (max-width: 480px)": {
+      blockquote: {
+        marginLeft: "0",
+      },
     },
     hr: {
       background: "hsla(5,0%,0%,0.1)",
+    },
+    "ol,ul": {
+      marginLeft: "1.75em",
+    },
+    // 代码背景色
+    ':not(pre) > code[class*="language-"],pre[class*="language-"]': {
+      background: "#f7f7f7 !important",
     },
   }
 }
