@@ -32,6 +32,20 @@ Wordpress2016.overrideThemeStyles = () => {
     ':not(pre) > code[class*="language-"],pre[class*="language-"]': {
       background: "#f7f7f7 !important",
     },
+    table: {
+      borderTop: "1px solid #ddd",
+      borderLeft: "1px solid #ddd",
+    },
+    "td,th": {
+      borderRight: "1px solid #ddd",
+      borderBottom: "1px solid #ddd",
+      fontSize: "12px",
+      lineHeight: 1.5,
+      padding: "5px 10px",
+    },
+    "th:first-child, td:first-child": {
+      padding: "5px 10px",
+    },
   }
 }
 
