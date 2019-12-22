@@ -1,10 +1,14 @@
+const { getMdByDir } = require("./utils");
 module.exports = {
   title: "zhongxia",
   description: "乾坤未定，你我皆是黑马",
   // 注入到当前页面的 HTML <head> 中的标签
   head: [["link", { rel: "icon", href: "/logo.png" }]],
   base: "/",
-  plugins: ["@vuepress-reco/vuepress-plugin-back-to-top"],
+  plugins: [
+    "@vuepress-reco/vuepress-plugin-back-to-top",
+    "vuepress-plugin-permalink-pinyin"
+  ],
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
@@ -20,8 +24,9 @@ module.exports = {
     sidebarDepth: 2, // 将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     lastUpdated: "Last Updated", // 文档更新时间：每个文件git最后提交的时间
     nav: [
-      { text: "Blog", link: "/post/" },
-      { text: "Guide", link: "/guide/" },
+      { text: "博客", link: "/post/" },
+      { text: "早期博客", link: "/old/" },
+      { text: "面试题", link: "/interview/" },
       { text: "About", link: "/about/" },
       {
         text: "GitHub",
@@ -29,6 +34,25 @@ module.exports = {
         target: "_blank"
       }
     ],
-    sidebar: "auto"
+    sidebar: {
+      "/post/": [
+        {
+          title: "博客列表",
+          children: getMdByDir("post", "post")
+        }
+      ],
+      "/old/": [
+        {
+          title: "早期文章列表",
+          children: getMdByDir("old", "old")
+        }
+      ],
+      "/interview/": [
+        {
+          title: "面试题",
+          children: getMdByDir("interview", "interview")
+        }
+      ]
+    }
   }
 };

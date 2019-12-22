@@ -1,5 +1,5 @@
 ---
-title: 利用 Github Pages 部署 Blog 站点
+title: 1904 - 利用 Github Pages 部署 Blog 站点
 date: 2019-04-30 16:22:39
 description: ""
 ---
@@ -12,13 +12,9 @@ description: ""
 
 用户编写的，托管再 github 上的静态网页。
 
-
-
 > 下面所有讲述都默认认为您已经有了一个 `github`帐号的前提下。
 >
 > 笔者笔记本是 Mac 系统。
-
-
 
 ## 一、创建仓库
 
@@ -27,8 +23,6 @@ description: ""
 > 这个名字格式是 Github Pages 的规则
 
 <img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5i1vrl4oj30k405q3ye.jpg" alt="创建项目" style="zoom:50%;" />
-
-
 
 ## 二、提交静态网页到仓库中
 
@@ -65,10 +59,6 @@ git push  origin master
 
 <img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5i20iqgyj30yq0n4mxl.jpg" alt="项目截图" style="zoom:50%;" />
 
-
-
-
-
 ## 三、查看 Github Pages 配置
 
 正常完成上一步，你就可以访问 [https://zhongxia245.github.io](https://zhongxia245.github.io) 这个域名去访问你部署的静态站点了。
@@ -90,8 +80,6 @@ git push  origin master
 很简单，你现在已经部署好了，你的静态站点了。 可以往里面添加你想要展示的内容了。
 
 如果你是写 Blog，可以去了解一下 `Hexo` , `Gatsby` ， 都可以快速构建出你简单美观的 Blog 站点了。
-
-
 
 ## 四、Gitee.io 了解一下
 

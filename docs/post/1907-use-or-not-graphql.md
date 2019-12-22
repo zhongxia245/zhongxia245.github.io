@@ -1,5 +1,5 @@
 ---
-title: 对于用不用 GraphQL 的思考？
+title: 1907 - 对于用不用 GraphQL 的思考？
 date: 2019-07-20 19:52:35
 description: ""
 ---
