@@ -26,7 +26,7 @@ description: ""
 
 > 这个名字格式是 Github Pages 的规则
 
-<img src="./img1.png" alt="创建项目" style="zoom:50%;" />
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5i1vrl4oj30k405q3ye.jpg" alt="创建项目" style="zoom:50%;" />
 
 
 
@@ -63,7 +63,7 @@ git push  origin master
 
 大概这样
 
-<img src="./img2.png" alt="项目截图" style="zoom:50%;" />
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5i20iqgyj30yq0n4mxl.jpg" alt="项目截图" style="zoom:50%;" />
 
 
 
@@ -77,7 +77,7 @@ git push  origin master
 
 在 Project —> Settings —> Github Pages 可以看到分配给你的二级域名 (`username.github.io`)。
 
-<img src="./img3.png" alt="设置位置" style="zoom:50%;" />
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5i27jpgvj318807cjrj.jpg" alt="设置位置" style="zoom:50%;" />
 
 打开 `Settings` 后，往下滑动一屏左右，可以看到 `Github Pages` 的信息。
 
@@ -85,7 +85,7 @@ git push  origin master
 - 页面主题选择
 - 自定义域名配置
 
-<img src="./img4.png" alt="img" style="zoom:50%;" />
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5i22b9gfj311w0kydgk.jpg" alt="img" style="zoom:50%;" />
 
 很简单，你现在已经部署好了，你的静态站点了。 可以往里面添加你想要展示的内容了。
 
