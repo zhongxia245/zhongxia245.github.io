@@ -27,6 +27,7 @@ module.exports = {
       { text: "博客", link: "/post/" },
       { text: "早期文章", link: "/old/" },
       { text: "面试题", link: "/interview/" },
+      { text: "兼容问题", link: "/faq/" },
       { text: "About", link: "/about/" },
       {
         text: "GitHub",
