@@ -1,5 +1,5 @@
 ---
-title: github如何绑定域名
+title: 【Git】github如何绑定域名
 tags: git
 description: >-
   经常有人用github pages 的功能，来当自己的blog，或者开源组件介绍和使用说明。 github  pages 默认的地址是

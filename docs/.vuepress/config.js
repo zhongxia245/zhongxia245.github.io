@@ -25,7 +25,7 @@ module.exports = {
     lastUpdated: "Last Updated", // 文档更新时间：每个文件git最后提交的时间
     nav: [
       { text: "博客", link: "/post/" },
-      { text: "早期博客", link: "/old/" },
+      { text: "早期文章", link: "/old/" },
       { text: "面试题", link: "/interview/" },
       { text: "About", link: "/about/" },
       {
@@ -43,8 +43,24 @@ module.exports = {
       ],
       "/old/": [
         {
-          title: "早期文章列表",
-          children: getMdByDir("old", "old")
+          title: "Docker",
+          collapsable: true,
+          children: getMdByDir("old/docker", "old")
+        },
+        {
+          title: "FE",
+          collapsable: true,
+          children: getMdByDir("old/fe", "old")
+        },
+        {
+          title: "Node",
+          collapsable: true,
+          children: getMdByDir("old/node", "old")
+        },
+        {
+          title: "Linux",
+          collapsable: true,
+          children: getMdByDir("old/linux", "old")
         }
       ],
       "/interview/": [

@@ -1,5 +1,5 @@
 ---
-title: 【Webpack】githooks 自动化部署
+title: 【Git】githooks 自动化部署
 tags: git
 description: '如何使用 git hooks（eg:提交后会触发什么操作）来实现代码的自动化部署。 让你只需要关心代码的编码，然后比较，部署啥的，自动帮你搞定。'
 abbrlink: 10003

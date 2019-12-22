@@ -1,5 +1,5 @@
 ---
-title: 【webpack】单独打包css
+title: 【Webpack】单独打包css
 tags: webpack
 categories: 前端
 description: 'webpack 单独构建出 CSS，记录一下配置。 (2018-11-17 19:13:45：目前看来，这个问题好简单， jiong~~)'
