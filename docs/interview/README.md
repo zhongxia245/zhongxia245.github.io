@@ -12,18 +12,21 @@ title: 目录列表
 
 
 
-## 知识点
+## 指南
 
-前端的知识点有很多，大概可以分为一下几类
-
-1. HTML、CSS、JS 基础知识
-2. 框架基础知识（React，Vue）
-3. webpack 
-4. 性能优化
-5. 安全问题 （CSRF，XSS，CSP）
-6. 工程化（模块化，组件化，规范化，自动化）
+> 针对这篇指南，整理出一套需要的面试指南和流程。 
+>
+> https://juejin.im/post/5dfef50751882512444027eb
 
 
 
-> 这个需要慢慢补充
+
+
+这里的面试指南，大体介绍的知识结构像这样。
+
+![前端面试从准备到谈薪指南](https://tva1.sinaimg.cn/large/006tNbRwgy1ga6zckug1pj311g0dy7ep.jpg)
+
+> 图片来源： https://juejin.im/post/5dfef50751882512444027eb
+
+
 
