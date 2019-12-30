@@ -4,6 +4,8 @@ date: 2019-04-30 16:22:39
 description: ""
 ---
 
+# 利用 Github Pages 部署 Blog 站点
+
 部署 Blog 站点，正常情况下，你需要一个有独立外网 IP 的服务器，一个域名。
 
 但是 `Github` 提供了一个 `Github Pages` 的功能，支持把你代码仓库的代码部署起来，提提供一个 二级域名（`username.github.io`）。
