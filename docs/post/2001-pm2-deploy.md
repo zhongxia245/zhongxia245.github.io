@@ -2,8 +2,6 @@
 title: 2001 - pm2 自动化部署 Node 项目
 ---
 
-
-
 # pm2 自动化部署 Node 项目
 
 使用 pm2 deploy 来实现 Node 项目自动部署。

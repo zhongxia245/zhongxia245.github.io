@@ -7,4 +7,3 @@ sidebar: false
 
 1. [利用 Gatsby 构建 Blog](./hello-world-gatsby)
 2. [利用 vuepress 构建 Blog](./hello-world-vuepress)
-

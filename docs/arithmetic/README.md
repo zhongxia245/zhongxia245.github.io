@@ -1,6 +1,6 @@
 # 算法
 
-编写算法，准备用 jest 来测试的时候，发现 jest 运行没有反应。以为使用方式有误，找了半天没有找到原因。 
+编写算法，准备用 jest 来测试的时候，发现 jest 运行没有反应。以为使用方式有误，找了半天没有找到原因。
 
 后面 google 了一下，发现有同样的问题
 
@@ -16,6 +16,3 @@ https://stackoverflow.com/questions/55191638/jest-doesnt-run-hangs-indefinitely
 brew uninstall watchman
 brew install watchman
 ```
-
-
-

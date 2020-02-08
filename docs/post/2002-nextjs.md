@@ -1,3 +1,7 @@
+---
+title: Next.js 踩坑指南
+---
+
 # Next.js 踩坑指南
 
 next.js 是一个 react ssr 的框架，可以很方便的来实现 ReactSSR，对于需要 SEO 的需求来说，这个是很好用的。并且社区资源也很丰富，搜索资料也比较多。

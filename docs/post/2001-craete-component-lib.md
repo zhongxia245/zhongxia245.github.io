@@ -1,6 +1,6 @@
 ---
-title:从零创建一个组件库
-date:2020-01-19 15:58:20
+title: 从零创建一个组件库
+date: 2020-01-19 15:58:20
 ---
 
 # 从零创建一个组件库
@@ -18,20 +18,11 @@ date:2020-01-19 15:58:20
 5. 组件按需加载
 6. 组件展示（storybook，docz）
 
-
-
 ## 一、技术选型
 
 阿里开源了一个 `father` 的 npm 包，专门用来打包类库，组件，支持 roolup，babel，可以打包出 cmd。
 
-
-
-
-
 ## 终、参考文档
 
-1. [从零开始搭建Vue组件库 VV-UI](https://zhuanlan.zhihu.com/p/30948290)
+1. [从零开始搭建 Vue 组件库 VV-UI](https://zhuanlan.zhihu.com/p/30948290)
 2. [如何搭建一个组件库的开发环境](https://www.cxymsg.com/guide/componentCli.html)
-
-
-
