@@ -40,12 +40,12 @@ module.exports = {
       { text: "About", link: "/about/" }
     ],
     sidebar: {
-      // "/post/": [
-      //   {
-      //     title: "博客列表",
-      //     children: getMdByDir("post", "post")
-      //   }
-      // ],
+      "/post/": [
+        {
+          title: "博客列表",
+          children: getMdByDir("post", "post")
+        }
+      ],
       "/old/": [
         {
           title: "Docker",
