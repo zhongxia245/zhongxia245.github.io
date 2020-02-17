@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【Linux】Centos服务器前端环境安装 | zhongxia</title>
+    <meta name="description" content="身为一个前端开发人员，需要安装的东西，有以下几个。 Nodejs , Npm , git , nginx , redis, mysql , mongodb，本文则主要讲解在 centos 下，前端环境的安装。">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.eff4c7fd.css" as="style"><link rel="preload" href="/assets/js/app.78d817e6.js" as="script"><link rel="preload" href="/assets/js/2.39175ddf.js" as="script"><link rel="preload" href="/assets/js/51.d217ec3f.js" as="script"><link rel="prefetch" href="/assets/js/10.e2dc9b9a.js"><link rel="prefetch" href="/assets/js/11.d1696dae.js"><link rel="prefetch" href="/assets/js/12.38c301d0.js"><link rel="prefetch" href="/assets/js/13.a02ac391.js"><link rel="prefetch" href="/assets/js/14.8bce90c6.js"><link rel="prefetch" href="/assets/js/15.66cfd5f9.js"><link rel="prefetch" href="/assets/js/16.3a9702b5.js"><link rel="prefetch" href="/assets/js/17.2c71248c.js"><link rel="prefetch" href="/assets/js/18.931a1317.js"><link rel="prefetch" href="/assets/js/19.7ee21b78.js"><link rel="prefetch" href="/assets/js/20.bf5faa4b.js"><link rel="prefetch" href="/assets/js/21.f6f7b4f6.js"><link rel="prefetch" href="/assets/js/22.08ccde32.js"><link rel="prefetch" href="/assets/js/23.471c6876.js"><link rel="prefetch" href="/assets/js/24.fee1a2e8.js"><link rel="prefetch" href="/assets/js/25.99afd69e.js"><link rel="prefetch" href="/assets/js/26.17ee536a.js"><link rel="prefetch" href="/assets/js/27.fffc8c7f.js"><link rel="prefetch" href="/assets/js/28.646afabb.js"><link rel="prefetch" href="/assets/js/29.077ddd70.js"><link rel="prefetch" href="/assets/js/3.03805157.js"><link rel="prefetch" href="/assets/js/30.1a8d2492.js"><link rel="prefetch" href="/assets/js/31.0fee5d09.js"><link rel="prefetch" href="/assets/js/32.6dfc0d63.js"><link rel="prefetch" href="/assets/js/33.cb03d76b.js"><link rel="prefetch" href="/assets/js/34.9bd6d183.js"><link rel="prefetch" href="/assets/js/35.9998c252.js"><link rel="prefetch" href="/assets/js/36.03416c13.js"><link rel="prefetch" href="/assets/js/37.448dec73.js"><link rel="prefetch" href="/assets/js/38.ae0cbce2.js"><link rel="prefetch" href="/assets/js/39.ee104725.js"><link rel="prefetch" href="/assets/js/4.b3dec607.js"><link rel="prefetch" href="/assets/js/40.eb2ee867.js"><link rel="prefetch" href="/assets/js/41.edc3b4d4.js"><link rel="prefetch" href="/assets/js/42.f55059ef.js"><link rel="prefetch" href="/assets/js/43.2372c02d.js"><link rel="prefetch" href="/assets/js/44.ee104c41.js"><link rel="prefetch" href="/assets/js/45.4aeb260f.js"><link rel="prefetch" href="/assets/js/46.cb8e2144.js"><link rel="prefetch" href="/assets/js/47.2897ca06.js"><link rel="prefetch" href="/assets/js/48.ff6c4720.js"><link rel="prefetch" href="/assets/js/49.321a4e12.js"><link rel="prefetch" href="/assets/js/5.d780f13b.js"><link rel="prefetch" href="/assets/js/50.5d535131.js"><link rel="prefetch" href="/assets/js/52.451208e5.js"><link rel="prefetch" href="/assets/js/53.3c0e386e.js"><link rel="prefetch" href="/assets/js/54.457bfa09.js"><link rel="prefetch" href="/assets/js/55.2ab3005f.js"><link rel="prefetch" href="/assets/js/56.1c46fa32.js"><link rel="prefetch" href="/assets/js/57.2f6eb766.js"><link rel="prefetch" href="/assets/js/58.69bc73b8.js"><link rel="prefetch" href="/assets/js/59.e895e676.js"><link rel="prefetch" href="/assets/js/6.38dbf43a.js"><link rel="prefetch" href="/assets/js/60.633e1e62.js"><link rel="prefetch" href="/assets/js/61.b94dcbd7.js"><link rel="prefetch" href="/assets/js/62.3fd8ffe0.js"><link rel="prefetch" href="/assets/js/63.d23cee23.js"><link rel="prefetch" href="/assets/js/64.5b342174.js"><link rel="prefetch" href="/assets/js/65.c3a714d4.js"><link rel="prefetch" href="/assets/js/66.d93cc18b.js"><link rel="prefetch" href="/assets/js/67.0ca3c871.js"><link rel="prefetch" href="/assets/js/68.8389f128.js"><link rel="prefetch" href="/assets/js/69.9e07bc24.js"><link rel="prefetch" href="/assets/js/7.939ddc41.js"><link rel="prefetch" href="/assets/js/70.9051c464.js"><link rel="prefetch" href="/assets/js/71.b9c566ce.js"><link rel="prefetch" href="/assets/js/72.7a0a2035.js"><link rel="prefetch" href="/assets/js/73.d2d4670b.js"><link rel="prefetch" href="/assets/js/74.83d8b9d1.js"><link rel="prefetch" href="/assets/js/75.1e397728.js"><link rel="prefetch" href="/assets/js/76.6c23c88e.js"><link rel="prefetch" href="/assets/js/77.7a658dae.js"><link rel="prefetch" href="/assets/js/78.03938428.js"><link rel="prefetch" href="/assets/js/79.fe1ddcd8.js"><link rel="prefetch" href="/assets/js/8.f44495b7.js"><link rel="prefetch" href="/assets/js/80.bc5ec8dd.js"><link rel="prefetch" href="/assets/js/81.bb6ac0cc.js"><link rel="prefetch" href="/assets/js/82.284cb998.js"><link rel="prefetch" href="/assets/js/83.35f9364b.js"><link rel="prefetch" href="/assets/js/84.fceeb27d.js"><link rel="prefetch" href="/assets/js/85.e61d68d6.js"><link rel="prefetch" href="/assets/js/86.30ecd90a.js"><link rel="prefetch" href="/assets/js/87.b7b40006.js"><link rel="prefetch" href="/assets/js/88.1b3b8cd5.js"><link rel="prefetch" href="/assets/js/89.b3204fc6.js"><link rel="prefetch" href="/assets/js/9.886a53af.js"><link rel="prefetch" href="/assets/js/90.e05b8f8c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.eff4c7fd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">zhongxia</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/post/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/old/" class="nav-link router-link-active">
+  早期文章
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试题
+</a></div><div class="nav-item"><a href="/faq/" class="nav-link">
+  兼容问题
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <a href="https://github.com/zhongxia245/zhongxia245.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/post/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/old/" class="nav-link router-link-active">
+  早期文章
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试题
+</a></div><div class="nav-item"><a href="/faq/" class="nav-link">
+  兼容问题
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <a href="https://github.com/zhongxia245/zhongxia245.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>FE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Node</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Linux</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html" class="active sidebar-link">【Linux】Centos服务器前端环境安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#一、nodejs" class="sidebar-link">一、NodeJs</a></li><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#二、git" class="sidebar-link">二、Git</a></li><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#三、-nginx" class="sidebar-link">三、 Nginx</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#_3-1-ecs-服务器开放-80-端口，不然外网访问不了" class="sidebar-link">3.1 ECS 服务器开放 80 端口，不然外网访问不了</a></li></ul></li><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#四、redis" class="sidebar-link">四、redis</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#_4-1-配置安全组端口" class="sidebar-link">4.1 配置安全组端口</a></li></ul></li><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#五、mysql" class="sidebar-link">五、mysql</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#_5-1-远程访问" class="sidebar-link">5.1 远程访问</a></li></ul></li><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#六、mongodb" class="sidebar-link">六、mongodb</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/old/linux/linux-centos-fu-wu-qi-qian-duan-huan-jing-an-zhuang.html#_6-1-mongodb-添加-帐号密码" class="sidebar-link">6.1 mongodb 添加 帐号密码</a></li></ul></li></ul></li><li><a href="/old/linux/linux-ssh--mian-mi-deng-lu.html" class="sidebar-link">【linux】SSH 免密登录</a></li><li><a href="/old/linux/linux--yun-xu-ni-zhu-ji-yun-fu-wu-qi-de-qu-bie.html" class="sidebar-link">【Linux】云虚拟主机，云服务器的区别</a></li><li><a href="/old/linux/linux--xiu-gaicentos-dessh-fu-wu-mo-ren-duan-kou.html" class="sidebar-link">【Linux】修改Centos的SSH服务默认端口</a></li><li><a href="/old/linux/nginx-nginx-jian-yi-jiao-cheng.html" class="sidebar-link">【Nginx】简易教程</a></li><li><a href="/old/linux/nginx--cong-ling-pei-zhihttps-zhan-dian.html" class="sidebar-link">【Linux】5分钟让你的网站支持 https</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>身为一个前端开发人员，需要安装的东西，有以下几个。 Nodejs , Npm , git , nginx , redis, mysql , mongodb</p> <h2 id="一、nodejs"><a href="#一、nodejs" class="header-anchor">#</a> 一、NodeJs</h2> <p>参考文章：</p> <ul><li><a href="https://www.cnblogs.com/lpbottle/p/7733397.html" target="_blank" rel="noopener noreferrer">《如何在 CentOS7 中安装 Nodejs》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener noreferrer">《NodeJs 官网下载》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 下载包</span>
+<span class="token function">wget</span> https://nodejs.org/dist/v8.11.2/node-v8.11.2-linux-x64.tar.xz
+
+<span class="token comment"># 解压</span>
+<span class="token function">tar</span> xvf node-v8.11.2-linux-x64.tar.xz
+
+<span class="token builtin class-name">cd</span>  node-v8.11.2-linux-x64
+
+<span class="token comment"># 安装必要的编译包</span>
+yum <span class="token function">install</span> gcc gcc-c++
+
+<span class="token comment"># 编译，打包</span>
+./configure
+<span class="token function">make</span>
+
+<span class="token comment"># 安装</span>
+<span class="token function">make</span> <span class="token function">install</span>
+
+node -v
+
+<span class="token function">npm</span> -v
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="二、git"><a href="#二、git" class="header-anchor">#</a> 二、Git</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>yum <span class="token function">install</span> <span class="token function">git</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="三、-nginx"><a href="#三、-nginx" class="header-anchor">#</a> 三、 Nginx</h2> <p>参考文章</p> <ul><li><a href="https://www.linuxidc.com/Linux/2016-09/134907.htm" target="_blank" rel="noopener noreferrer">《CentOS 7 下安装 Nginx》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 安装依赖</span>
+yum <span class="token function">install</span> gcc-c++
+
+yum <span class="token function">install</span> -y pcre pcre-devel
+
+yum <span class="token function">install</span> -y zlib zlib-devel
+
+yum <span class="token function">install</span> -y openssl openssl-devel
+
+<span class="token comment"># 下载nginx包</span>
+<span class="token function">wget</span> -c https://nginx.org/download/nginx-1.10.1.tar.gz
+
+<span class="token comment"># 解压nginx</span>
+<span class="token function">tar</span> -zxvf nginx-1.10.1.tar.gz
+
+<span class="token builtin class-name">cd</span> nginx-1.10.1
+
+<span class="token comment"># 编译 安装</span>
+<span class="token function">make</span>
+
+<span class="token function">make</span> <span class="token function">install</span>
+
+<span class="token function">whereis</span> nginx
+
+<span class="token comment"># 设置别名，任何地方都可以访问</span>
+<span class="token function">ln</span> /usr/local/nginx/sbin/nginx /usr/local/bin/nginx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h3 id="_3-1-ecs-服务器开放-80-端口，不然外网访问不了"><a href="#_3-1-ecs-服务器开放-80-端口，不然外网访问不了" class="header-anchor">#</a> 3.1 ECS 服务器开放 80 端口，不然外网访问不了</h3> <ol><li>ECS 服务器 =&gt; 安全组 =》 配置规则 =》 添加安全组规则</li> <li>入方向 配置 80/80 端口</li> <li>如果还不行，则在配置一个出方向的规则</li></ol> <h2 id="四、redis"><a href="#四、redis" class="header-anchor">#</a> 四、redis</h2> <p>参考文章：</p> <ul><li><a href="https://www.cnblogs.com/wiseroll/p/7061673.html" target="_blank" rel="noopener noreferrer">《linux 下 yum 安装 redis 以及使用》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/kinginblue/article/details/51619445" target="_blank" rel="noopener noreferrer">《访问远程 Redis 服务。Connect to Remote Redis Server》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 安装redis</span>
+yum <span class="token function">install</span> redis
+
+<span class="token comment"># 启动redis</span>
+<span class="token function">service</span> redis start
+
+<span class="token comment"># 查看redis是否开启</span>
+<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> redis
+
+<span class="token comment"># 连接redis</span>
+redis-cli
+
+<span class="token operator">&gt;</span> <span class="token builtin class-name">set</span> name zhongxia
+<span class="token operator">&gt;</span> get name   // <span class="token operator">=</span><span class="token operator">&gt;</span>  zhongxia
+
+<span class="token comment"># 远程连接redis服务器</span>
+<span class="token function">whereis</span> redis    // <span class="token operator">=</span><span class="token operator">&gt;</span> redis: /etc/redis.conf
+
+<span class="token function">vim</span> /etc/redis.conf
+
+<span class="token comment"># 把17.0.0.1 改成0.0.0.0 表示不限制ip地址或者域名访问</span>
+<span class="token builtin class-name">bind</span> <span class="token number">127.0</span>.0.1  <span class="token operator">=</span>》 <span class="token builtin class-name">bind</span> <span class="token number">0.0</span>.0.0
+
+<span class="token comment"># 重启redis服务器</span>
+<span class="token function">service</span> redis stop
+
+<span class="token function">service</span> redis start
+
+
+<span class="token comment"># 远程连接redis</span>
+redis-cli -h ip地址 -p <span class="token number">6379</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h3 id="_4-1-配置安全组端口"><a href="#_4-1-配置安全组端口" class="header-anchor">#</a> 4.1 配置安全组端口</h3> <ol><li>ECS 服务器 =&gt; 安全组 =》 配置规则 =》 添加安全组规则</li> <li>入方向 配置 6379/6379 端口</li> <li>如果还不行，则在配置一个出方向的规则</li></ol> <h2 id="五、mysql"><a href="#五、mysql" class="header-anchor">#</a> 五、mysql</h2> <p>参考文章：</p> <ul><li><a href="https://www.linuxidc.com/Linux/2016-09/134940.htm?from=groupmessage" target="_blank" rel="noopener noreferrer">《CentOS 7.0 下使用 yum 安装 MySQL》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 1. 下载mysql的repo源</span>
+$ <span class="token function">wget</span> http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+<span class="token comment"># 2. 安装mysql-community-release-el7-5.noarch.rpm包</span>
+$ <span class="token function">rpm</span> -ivh mysql-community-release-el7-5.noarch.rpm
+
+<span class="token comment"># 安装这个包后，会获得两个mysql的yum repo源：/etc/yum.repos.d/mysql-community.repo，/etc/yum.repos.d/mysql-community-source.repo。</span>
+
+<span class="token comment"># 3. 安装mysql</span>
+$ yum <span class="token function">install</span> mysql-server
+
+<span class="token comment"># 根据提示安装就可以了,不过安装完成后没有密码,需要重置密码</span>
+
+<span class="token comment"># 4. 重置mysql密码</span>
+$ mysql -u root
+
+
+<span class="token comment"># 登录时有可能报这样的错：ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock‘ (2)，原因是/var/lib/mysql的访问权限问题。下面的命令把/var/lib/mysql的拥有者改为当前用户：</span>
+
+$ <span class="token function">sudo</span> <span class="token function">chown</span> -R root:root /var/lib/mysql
+
+<span class="token comment"># 重启mysql服务</span>
+
+$ <span class="token function">service</span> mysqld restart
+
+<span class="token comment"># 接下来登录重置密码：</span>
+
+$ mysql -u root  //直接回车进入mysql控制台
+mysql <span class="token operator">&gt;</span> use mysql<span class="token punctuation">;</span>
+mysql <span class="token operator">&gt;</span> update user <span class="token builtin class-name">set</span> <span class="token assign-left variable">password</span><span class="token operator">=</span>password<span class="token punctuation">(</span><span class="token string">'123456'</span><span class="token punctuation">)</span> where <span class="token assign-left variable">user</span><span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
+mysql <span class="token operator">&gt;</span> <span class="token builtin class-name">exit</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h3 id="_5-1-远程访问"><a href="#_5-1-远程访问" class="header-anchor">#</a> 5.1 远程访问</h3> <p>参考文章</p> <ul><li><a href="http://www.jb51.net/article/121173.htm" target="_blank" rel="noopener noreferrer">《阿里云下配置 MySQL 远程连接的步骤详解》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 登录数据库</span>
+mysql -u 用户名 -h localhost -p 密码
+
+<span class="token comment"># 打开mysql</span>
+use mysql<span class="token punctuation">;</span>
+
+<span class="token comment"># %表示任何ip都能连接mysql</span>
+update user <span class="token builtin class-name">set</span> <span class="token function">host</span> <span class="token operator">=</span> <span class="token string">'%'</span> where user <span class="token operator">=</span> <span class="token string">'root'</span> <span class="token punctuation">;</span>
+
+<span class="token comment"># 修改完后，刷新权限表，让配置生效</span>
+flush privileges <span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="六、mongodb"><a href="#六、mongodb" class="header-anchor">#</a> 六、mongodb</h2> <p>参考文章</p> <ul><li><a href="https://www.mongodb.com/download-center?jmp=nav#community" target="_blank" rel="noopener noreferrer">《MongoDB Download Center》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/junshangshui/article/details/79371316" target="_blank" rel="noopener noreferrer">《CentOS7.2 中安装 MongoDB》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 下载安装包</span>
+<span class="token function">wget</span> https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.5.tgz
+
+<span class="token comment"># 解压</span>
+<span class="token function">tar</span> -xvzf mongodb-linux-x86_64-3.6.5.tgz
+
+<span class="token function">mv</span> mongodb-linux-x86_64-3.6.5 /opt/mongodb-v3.6.5
+
+<span class="token comment"># 把mongodb的bin目录设置到环境变量里面</span>
+<span class="token function">vim</span> ./bash_profile
+
+<span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/opt/mongodb-v3.6.5/bin
+
+<span class="token builtin class-name">source</span>
+
+<span class="token comment"># 创建目录存在数据</span>
+<span class="token function">mkdir</span> /data/db
+<span class="token function">mkdir</span> /data/log
+<span class="token function">vim</span> /data/log/mongodb.log
+
+<span class="token comment"># 添加一个mongodb.conf</span>
+<span class="token assign-left variable">port</span><span class="token operator">=</span><span class="token number">27017</span>                          <span class="token comment">#端口</span>
+<span class="token assign-left variable">dbpath</span><span class="token operator">=</span> /data/db                    <span class="token comment">#数据库存文件存放目录</span>
+<span class="token assign-left variable">logpath</span><span class="token operator">=</span> /data/log/mongodb.log      <span class="token comment">#日志文件存放路径</span>
+<span class="token assign-left variable">logappend</span><span class="token operator">=</span>true                      <span class="token comment">#使用追加的方式写日志</span>
+<span class="token assign-left variable">fork</span><span class="token operator">=</span>true                           <span class="token comment">#不以守护程序的方式启用，即不在后台运行</span>
+<span class="token assign-left variable">maxConns</span><span class="token operator">=</span><span class="token number">100</span>                        <span class="token comment">#最大同时连接数</span>
+<span class="token assign-left variable">noauth</span><span class="token operator">=</span>true                         <span class="token comment">#不启用验证</span>
+<span class="token assign-left variable">journal</span><span class="token operator">=</span>true                        <span class="token comment">#每次写入会记录一条操作日志（通过journal可以重新构造出写入的数据）。</span>
+                                    <span class="token comment">#即使宕机，启动时wiredtiger会先将数据恢复到最近一次的checkpoint点，然后重放后续的journal日志来恢复。</span>
+<span class="token assign-left variable">storageEngine</span><span class="token operator">=</span>wiredTiger            <span class="token comment">#存储引擎有mmapv1、wiretiger、mongorocks</span>
+bind_ip <span class="token operator">=</span> <span class="token number">0.0</span>.0.0                   <span class="token comment">#这样就可外部访问了，例如从win10中去连虚拟机中的MongoDB</span>
+
+<span class="token comment"># 后台启动mongodb</span>
+mongod --config /usr/mongodb/mongodb.conf
+
+
+<span class="token comment"># 连接到数据库</span>
+mongo
+
+<span class="token operator">&gt;</span> show databases<span class="token punctuation">;</span>
+
+<span class="token operator">&gt;</span> use admin<span class="token punctuation">;</span>
+
+<span class="token operator">&gt;</span> show tables<span class="token punctuation">;</span>
+
+<span class="token operator">&gt;</span> db.system.version.find<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br></div></div><h3 id="_6-1-mongodb-添加-帐号密码"><a href="#_6-1-mongodb-添加-帐号密码" class="header-anchor">#</a> 6.1 mongodb 添加 帐号密码</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 数据库存在则切换过去，否则则新建一个数据库</span>
+use blog<span class="token punctuation">;</span>
+
+<span class="token comment"># 创建数据库</span>
+db.createUser<span class="token punctuation">(</span><span class="token punctuation">{</span>user:<span class="token string">&quot;test&quot;</span>,pwd:<span class="token string">&quot;test@test&quot;</span>,roles:<span class="token punctuation">[</span><span class="token punctuation">{</span>role:<span class="token string">&quot;readWrite&quot;</span>,db:<span class="token string">&quot;blog&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 重新启动数据库</span>
+
+<span class="token comment"># 方式一 【不推荐】</span>
+<span class="token function">service</span> mongod stop
+
+<span class="token comment"># 方式二 【推荐】</span>
+<span class="token operator">&gt;</span>use admin
+
+switched to db admin
+
+<span class="token operator">&gt;</span>db.shutdownServer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+server should be down<span class="token punctuation">..</span>.
+
+<span class="token comment"># 方式三</span>
+mongod --shutdown
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token operator">&gt;</span> use blog<span class="token punctuation">;</span>
+
+<span class="token operator">&gt;</span> show tables<span class="token punctuation">;</span>
+
+<span class="token number">2018</span>-05-23T14:59:32.819+0800 E QUERY    <span class="token punctuation">[</span>thread1<span class="token punctuation">]</span> Error: listCollections failed: <span class="token punctuation">{</span>
+	<span class="token string">&quot;ok&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+	<span class="token string">&quot;errmsg&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;not authorized on blog to execute command { listCollections: 1.0, filter: {}, <span class="token variable">$db</span>: <span class="token entity" title="\&quot;">\&quot;</span>blog<span class="token entity" title="\&quot;">\&quot;</span> }&quot;</span>,
+	<span class="token string">&quot;code&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">13</span>,
+	<span class="token string">&quot;codeName&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;Unauthorized&quot;</span>
+<span class="token punctuation">}</span> <span class="token builtin class-name">:</span>
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype._getCollectionInfosCommand@src/mongo/shell/db.js:941:1
+DB.prototype.getCollectionInfos@src/mongo/shell/db.js:953:19
+DB.prototype.getCollectionNames@src/mongo/shell/db.js:964:16
+shellHelper.show@src/mongo/shell/utils.js:842:9
+shellHelper@src/mongo/shell/utils.js:739:15
+@<span class="token punctuation">(</span>shellhelp2<span class="token punctuation">)</span>:1:1
+
+<span class="token operator">&gt;</span> db.auth<span class="token punctuation">(</span><span class="token string">'zhongxia'</span>,<span class="token string">'izhongxia'</span><span class="token punctuation">)</span>
+<span class="token number">1</span>
+
+<span class="token operator">&gt;</span> show tables<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zhongxia245/zhongxia245.github.io/edit/docs/docs/old/linux/linux-Centos服务器前端环境安装.md" target="_blank" rel="noopener noreferrer">Edit</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">12/22/2019, 4:19:58 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/old/node/node--shi-xian-sso-dan-dian-deng-lu.html" class="prev">
+        【Node】NodeJs 实现 SSO单点登录
+      </a></span> <span class="next"><a href="/old/linux/linux-ssh--mian-mi-deng-lu.html">
+        【linux】SSH 免密登录
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-566b5166 data-v-566b5166><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-566b5166><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-566b5166></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-566b5166></path></svg></div></div></div>
+    <script src="/assets/js/app.78d817e6.js" defer></script><script src="/assets/js/2.39175ddf.js" defer></script><script src="/assets/js/51.d217ec3f.js" defer></script>
+  </body>
+</html>
